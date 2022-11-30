@@ -21,7 +21,7 @@ app.post("/users", async (req:Request, res:Response)=>{
     
         await connection.insert(
             [{
-                id:Math.random(), 
+                id:Math.random(),
                 name: name,
                 email: email,
                 password: password
@@ -33,6 +33,18 @@ app.post("/users", async (req:Request, res:Response)=>{
 
     }catch(error:any){
         console.log(error)
+    }
+})
+
+// Listando os usuários:
+app.get("/users", async (req:Request, res:Response):Promise<void>=>{
+    try{
+       let result = await connection.raw(
+            `SELECT * FROM Labecommerce_users`
+        )
+        res.status(200).send(result[0])
+    }catch(error:any){
+        console.log(error.message)
     }
 })
 
