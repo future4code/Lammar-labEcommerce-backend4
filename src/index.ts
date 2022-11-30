@@ -5,6 +5,7 @@ import criarUsuario from "./endpoints/criarUsuario"
 import listarUsuarios from "./endpoints/listaDeUsuarios"
 import cadastrarProduto from "./endpoints/cadastrarProduto"
 import listarProdutos from "./endpoints/listaDeProdutos"
+import registrarCompras from "./endpoints/registroDeCompras"
 
 dotenv.config()
 
@@ -26,7 +27,7 @@ app.post("/products", cadastrarProduto)
 app.get("/products", listarProdutos)
 
 // Registro de compra:
-app.post("/purchases", )
+app.post("/purchases", registrarCompras)
 
 
 app.listen(3003, () => {
