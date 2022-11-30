@@ -1,10 +1,10 @@
 import express, { Request, request, Response } from "express"
 import cors from 'cors'
 import dotenv from "dotenv"
-import { connection } from "./data/connection"
 import criarUsuario from "./endpoints/criarUsuario"
 import listarUsuarios from "./endpoints/listaDeUsuarios"
 import cadastrarProduto from "./endpoints/cadastrarProduto"
+import listarProdutos from "./endpoints/listaDeProdutos"
 
 dotenv.config()
 
@@ -21,6 +21,13 @@ app.get("/users", listarUsuarios)
 
 // cadastrando produtos:
 app.post("/products", cadastrarProduto)
+
+//listando os produtos:
+app.get("/products", listarProdutos)
+
+// Registro de compra:
+app.post("/purchases", )
+
 
 app.listen(3003, () => {
     console.log("Servidor rodando na porta 3003");
