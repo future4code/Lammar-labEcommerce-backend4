@@ -18,6 +18,16 @@ const criarTabelas = () => connection
             price DECIMAL NOT NULL,
             image_url VARCHAR(255) NOT NULL
         );
+
+        CREATE TABLE Labecommerce_purchases(
+            id VARCHAR(255) PRIMARY KEY,
+            user_id VARCHAR(255) NOT NULL,
+            product_id VARCHAR(255) NOT NULL,
+            quantity INT NOT NULL,
+            total_price DECIMAL NOT NULL,
+            FOREIGN KEY (user_id) REFERENCES Labecommerce_users(id),
+            FOREIGN KEY (product_id) REFERENCES Labecommerce_products(id)
+        );
         `
     )
     .then(() => {console.log("Tabela criada com sucesso")})
