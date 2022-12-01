@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import { raw, Request, Response } from "express";
 import { connection } from "../data/connection";
 
 export default async function registrarCompras(
@@ -16,6 +16,8 @@ export default async function registrarCompras(
             SELECT price from Labecommerce_products WHERE id=${product_id};
         `)
         .then(res => res[0][0].price)
+        
+        console.log(precoProduto)
 
         const pedido = await connection.insert(
             [{
