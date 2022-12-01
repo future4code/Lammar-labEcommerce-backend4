@@ -6,6 +6,7 @@ import listarUsuarios from "./endpoints/listaDeUsuarios"
 import cadastrarProduto from "./endpoints/cadastrarProduto"
 import listarProdutos from "./endpoints/listaDeProdutos"
 import registrarCompras from "./endpoints/registroDeCompras"
+import listarCompras from "./endpoints/listaDeCompras"
 
 dotenv.config()
 
@@ -29,6 +30,8 @@ app.get("/products", listarProdutos)
 // Registro de compra:
 app.post("/purchases", registrarCompras)
 
+// Listando as compras:
+app.get("/users/:user_id/purchases", listarCompras)
 
 app.listen(3003, () => {
     console.log("Servidor rodando na porta 3003");
