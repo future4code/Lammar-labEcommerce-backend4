@@ -67,5 +67,7 @@
 [Documentação](https://link-da-documentação)
 
 ## Stack utilizada
-<p>TypeScript, Node, Express, Knex, MySql </p>
+<img src="https://skillicons.dev/icons?i=ts,nodejs, mysql," /> 
+<p>Express e Knex.</p>
+
 
