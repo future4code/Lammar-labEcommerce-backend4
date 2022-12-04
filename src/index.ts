@@ -7,6 +7,7 @@ import cadastrarProduto from "./endpoints/cadastrarProduto"
 import listarProdutos from "./endpoints/listaDeProdutos"
 import registrarCompras from "./endpoints/registroDeCompras"
 import listarCompras from "./endpoints/listaDeCompras"
+import { AddressInfo } from "net"
 
 dotenv.config()
 
@@ -33,6 +34,12 @@ app.post("/purchases", registrarCompras)
 // Listando as compras:
 app.get("/users/:user_id/purchases", listarCompras)
 
-app.listen(3003, () => {
-    console.log("Servidor rodando na porta 3003");
+const server = app.listen(process.env.port || 3003, () => {
+    if(server){
+        const address=server.address() as AddressInfo;
+        console.log(`Servidor rodando na porta ${address.port}`);
+    }else{
+        console.error(`Failure upon starting server`)
+    }
+
 });
