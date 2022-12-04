@@ -34,12 +34,7 @@ app.post("/purchases", registrarCompras)
 // Listando as compras:
 app.get("/users/:user_id/purchases", listarCompras)
 
-const server = app.listen(process.env.port || 3003, () => {
-    if(server){
-        const address=server.address() as AddressInfo;
-        console.log(`Servidor rodando na porta ${address.port}`);
-    }else{
-        console.error(`Failure upon starting server`)
-    }
+const server = app.listen(process.env.PORT || 3003, () => {
+    console.log(`Servidor rodando na porta ${process.env.PORT || 3003}`)
 
 });
