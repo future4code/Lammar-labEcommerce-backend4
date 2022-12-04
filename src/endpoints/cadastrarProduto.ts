@@ -22,7 +22,7 @@ export default async function cadastrarProduto(
         ).into("Labecommerce_products")        
     
         res.status(201).send(`Produto cadastrado com sucesso!`)
-        console.log("Produto cadastrado com sucesso!")
+        console.log("Produto cadastrado com sucesso!!")
 
     }catch(error:any){
         console.log(error)
