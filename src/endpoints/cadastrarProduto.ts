@@ -6,6 +6,8 @@ export default async function cadastrarProduto(
     res: Response
 ){
     try{
+
+        
         const {name, price, image_url} = req.body
     
         if(!name && !price && !image_url){
