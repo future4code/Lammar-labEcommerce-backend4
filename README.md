@@ -69,7 +69,7 @@
 
 ## Deploy
 
-[Deploy](https://labecommercefinalbruna.onrender.com/)
+[Deploy](https://labecommerce-backend4-bruna.onrender.com/users)
 
 ## Stack utilizada
 <img src="https://skillicons.dev/icons?i=ts,nodejs, mysql," /> 
